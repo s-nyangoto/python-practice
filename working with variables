@@ -1,0 +1,47 @@
+# This is a  brief demo of how to work with different data types as well as assigning values to variables.
+
+# This illustrates a string
+# Always enclose a string in either single or double quotation marks
+#Python 3.10 also allows use of back ticks to represent a string.
+x = "Hello World"
+
+#An interger is a whole number or a number without any decimal point
+x =5		
+
+#A floating point number is a number with a decimal point
+x = 80.3	
+
+#This is a complex number
+x = 1j	
+
+#A list is represented by variables enclosed in a square bracket.
+x = ["apple", "banana", "cherry"]	
+
+#Tuples are used to store multiple items in a single variable.
+#A tuple is a collection which is ordered and unchangeable.
+x = ("apple", "banana", "cherry")		
+
+#A range 
+x = range(8)	
+
+#A dictionary
+x = {"name" : "John", "age" : 36}	
+
+#A set
+x = {"apple", "banana", "cherry"}		
+
+A frozenset
+x = frozenset({"apple", "banana", "cherry"})		
+
+#A boolean
+x = True	
+y = False
+
+#Bytes
+x = b"Hello"		
+
+#Bytearray
+x = bytearray(5)		
+
+#memoryview
+x = memoryview(bytes(5))	
