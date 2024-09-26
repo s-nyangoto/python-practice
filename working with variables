@@ -40,7 +40,7 @@ y = False
 #Bytes
 x = b"Hello"		
 
-#print try some of these key terms out
+# try some of these key terms out
 # Variable to store a value
 name = "John"  
 
