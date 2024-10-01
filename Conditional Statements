@@ -1,0 +1,14 @@
+# If condition evaluates the Boolean
+if is_true:
+  print("Condition was true")
+
+# Else catches when if was False  
+else: 
+  print("Condition was false")
+  
+# Try block attempts this code
+try:
+  result = num / 0
+# Except catches the ZeroDivisionError   
+except ZeroDivisionError as e:
+  print("Cannot divide by 0")
