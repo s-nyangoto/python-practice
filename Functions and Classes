@@ -74,6 +74,13 @@ print(list(nums))
 
 """
 Infinite sequence: Generators can be infinitely recursive/iterative to model data streams
+The key points:
+
+While loop to iterate forever
+
+Uses yield to lazily produce one attack at a time
+
+Execution is suspended after each yield until next() is called again
 """
 # Infinite random attack sequence
 import random
