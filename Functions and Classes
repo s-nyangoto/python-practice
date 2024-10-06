@@ -8,6 +8,8 @@ Arguments: Values passed into a function when calling it. Allows customizing beh
 Variable Arguments: Allows passing an arbitrary number of arguments to a function.
 
 Keyword Arguments: Arguments passed by name rather than position. Can have default values.
+
+Learn more at https://hub.labs.coursera.org/connect/sharedgxwkyxdz?forceRefresh=false&path=%2Fnotebooks%2FPython_Functions.ipynb&isLabVersioning=file-prep
 """
 #Function Example
 def double(x):
