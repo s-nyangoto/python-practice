@@ -10,6 +10,12 @@ Constructor: Special method that runs when an instance is created. Used to initi
 
 Inheritance: Creating a child class from parent class. Child inherits attributes and methods.
 """
+
+#Class: Defines a template
+# Class 
+class UFC:  
+    pass
+
 #Class Example
 class Vehicle:
     wheels = 4 # Class attribute
@@ -25,6 +31,31 @@ car = Vehicle("BMW", "i3") # Instance created
 print(car.wheels) # Access class attribute
 print(car.description()) # Call instance method
 
+#Object: An instance of a class
+# Class 
+class UFC:  
+    pass
+
+# Object
+ufc = UFC()
+
+#Attribute: Variables bound to an object
+class Fighter:
+    def __init__(self):
+        self.name = "Conor McGregor"  # Attribute 
+
+fighter = Fighter()
+print(fighter.name)
+
+#Method: Functions defined in a class
+
+class Fighter:
+    def trash_talk(self):# Method
+        print("I'm the best!")
+
+fighter = Fighter()
+fighter.trash_talk()
+
 #Inheritance Example
 class Pet:
     def eat(self):
@@ -37,3 +68,45 @@ class Dog(Pet):
 dog = Dog()
 dog.eat() # Inherited method
 dog.bark() # Dog specific method
+
+#Inheritance example2
+# Create a simple Competitor class
+class Competitor:
+
+  def __init__(self, name, age, weight):
+    self.name = name 
+    self.age = age
+    self.weight = weight
+ 
+ # Method Prints competitors stats           
+  def print_stats(self):
+    print(f"{self.name} is {self.age} years old and weighs {self.weight} pounds.")
+
+# Create a Fighter class that inherits from Competitor
+class Fighter(Competitor):
+  pass
+
+fighter = Fighter("Conor McGregor", 32, 170) 
+fighter.print_stats()
+
+#Python Code Example:  Using Inheritance
+# Example using inheritance 
+
+class UFC:
+
+  def weight_class(self, weight):
+      # Maps weight to weight class
+      return "Lightweight"  
+
+# Fighter class inherits from UFC
+class Fighter(UFC):
+
+  def __init__(self, name):
+    self.name = name
+  
+  def print_name(self):
+    print(self.name)
+
+fighter = Fighter("Khabib")  
+print(fighter.weight_class(155)) 
+fighter.print_name()
