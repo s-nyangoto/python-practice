@@ -67,3 +67,5 @@ python script_name.py
 **Learning Resources**
 
 •	Official Python Docs: https://www.python.org/
+•	[Official Python Docs: https://www.pyth](https://learn.microsoft.com/en-us/training/paths/beginner-python/?WT.mc_id=academic-0000-alfredodeza)
+
