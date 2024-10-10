@@ -204,3 +204,25 @@ def str_to_bool(val):
     else:
         raise ValueError("Invalid input value: %s" % val)
 
+
+#Plain Asserts
+#test_long_dictionaries.py
+def test_long_dictionaries():
+  result = {'key': 'value', 'lastname': 'deza', 'firstname': 'alfredo'}
+  expected = {'key': 'value', 'lastame': 'deza', 'firstname': 'alfredo'}
+  assert result == expected
+
+#test_long_lists.py
+def test_long_lists():
+  result = ['this', 'is', 'a', 'list', 'with', 'tons', 'of', 'items']
+  expected = ['this', 'is', 'A', 'list', 'with', 'tons', 'of', 'items']
+  assert result == expected
+
+#test_long_string.py
+# pytest can be truly magical with its asserts, this is how it behaves with strings:
+
+long_string = "This is A very long string that will need to be compared"
+
+def test_long_string():
+  expected = "This is a very long string that will need to be compared"
+  assert long_string == expected
