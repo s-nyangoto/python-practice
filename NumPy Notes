@@ -1,121 +1,136 @@
 '''
-==Introduction to NumPy arrays==
-NumPy (Numerical Python) is an essential library for working with dimensional arrays (matrices and vectors). 
-
-Because NumPy has optimizations it is usually much faster than working with Python when processing data.
-
-=====Key Terms=====
-Array: Primary data structure in NumPy, represented as homogeneous n-dimensional grid of values.
-
-Reshape: Transform an array into a new shape with same number of elements.
-
-Ravel: Flatten an array into one dimensional shape.
-
-Stack: Vertically or horizontally concatenate arrays.
-
-Slice: Extract subset of array elements using indexing.
-'''
-import numpy as np
-
-# Create array
-arr = np.array([1, 2, 3]) 
-print(arr)
-
-# Reshape 
-arr = arr.reshape(1, 3)
-print(arr)  
-
-# Ravel (flatten)
-flattened = arr.ravel() 
-
-# Stack vertically  
-arr1 = np.array([1, 2])
-arr2 = np.array([3, 4])
-stacked = np.vstack([arr1, arr2])  
-
-# Slice
-sliced = arr[0:2]
-
-
-With an activated virtual environment, install the library:
+Introduction to NumPy
+NumPy (Numerical Python) is a powerful library for numerical computing with Python. It introduces efficient and fast array operations that are much faster than traditional Python data structures. NumPy is essential for tasks involving large-scale computations and is a foundation for libraries like Pandas and TensorFlow.
+Key Terms
+•	Array: A homogeneous n-dimensional grid of values (i.e., all elements must be of the same type).
+•	Reshape: Changes the shape of an array while keeping the same data.
+•	Ravel: Flattens an array into one dimension.
+•	Stack: Combines multiple arrays into one by concatenating them.
+•	Slice: Accesses subsets of an array by indexing.
 ```
-```
-$ pip install numpy
-```
+________________________________________
+#Setup and Installation
+#Installing NumPy
+#To install NumPy, first activate your Python virtual environment, and then run:
+
+pip install numpy
+
+#Importing NumPy
+#After installing, import NumPy as follows:
 import numpy as np
-Arrays are homogenous, that is, its items must be of the same type (unlike a Python list)
-## Create arrays with lists
-# single dimension arrays
+________________________________________
 
-array = np.array([1,2,3,4,5])
-array
-# two dimensions
-
-array = np.array([[1,2],[2,2]])
-print(array.shape)
-array
-## Create arrays with built-in functions
-# 2x2 array with random floats of 0 to 1
-np.random.rand(2,2)
-# fill out the 3x4 array with the number 7
-np.full((3,4), 8)
-# using the number 1 is so common that `ones` is a function!
-np.ones((4,4))
-# a simple sequence from 0 to 4
-np.arange(0,5)
-# a sequence with three steps from 0 to 27
-np.arange(0, 27, 3)
-
-# More array operations
-
-import numpy as np
-## Expanding arrays
-# create a single dimension array
-array = np.ones((4,))
+```
+1. Creating Arrays
+Arrays are the main data structure in NumPy. Let’s explore different ways to create arrays.
+```
+#From Lists
+#	Single-dimensional array:
+array = np.array([1, 2, 3, 4, 5])
 print(array)
-print(array.shape)
 
-# expand one row
+#	Two-dimensional array:
+array = np.array([[1, 2], [3, 4]])
+print(array.shape)  # Output the shape (2, 2)
+print(array)
+
+#Using Built-in Functions
+#NumPy provides several functions for creating arrays:
+#	Random array (2x2) with values between 0 and 1:
+np.random.rand(2, 2)
+
+#	Full array (3x4) filled with a specified number:
+np.full((3, 4), 8)
+
+#	Array of ones:
+np.ones((4, 4))
+
+#	Simple sequence:
+np.arange(0, 5)
+
+#	Sequence with step:
+np.arange(0, 27, 3)
+________________________________________
+
+```
+2. Reshaping and Flattening
+```
+#	Reshape an array to a new shape:
+arr = np.array([1, 2, 3, 4, 5, 6])
+reshaped = arr.reshape(2, 3)
+print(reshaped)
+
+#	Flatten (Ravel) an array:
+flattened = reshaped.ravel()
+print(flattened)
+________________________________________
+
+```
+3. Array Operations
+```
+#Expanding Arrays
+#You can add new dimensions to an array with np.newaxis:
+array = np.ones((4,))
 expanded = array[np.newaxis, :]
-expanded.shape
-## Conditional new arrays
-array = np.array([[3,12,11],[45,22,11],[56,15,22]])
-# represent all matching conditions
-print(array < 20)
-# produce all matching values
-array[array < 20]
-## Slicing
+print(expanded.shape)  # Output: (1, 4)
 
-Similar to Python lists, but with more features and capabilities
+##Conditional Arrays
+#Apply conditions to filter or mask array values:
+array = np.array([[3, 12, 11], [45, 22, 11], [56, 15, 22]])
+print(array < 20)  # Boolean array
+print(array[array < 20])  # Extract elements < 20
+
+##Slicing
+#Similar to lists, NumPy arrays support slicing, but with more flexibility:
 a = np.arange(6)
-a
-# give a range
-a[1:4]
-## Stacking
+print(a[1:4])  # Output: [1, 2, 3]
+________________________________________
 
-# horizontally
-# must have same number of dimensions!
-first = np.full((2, 12), 2)
-print(first)
-second = np.full((2, 7), 2)
-print(second)
-np.hstack((first, second))
-# stacking vertically
-first = np.full((3,3), 1)
-print(first)
-second = np.full((3,3), 2)
-print(second)
-np.vstack((first, second))
+```
+4. Stacking Arrays
+```
+#Combine arrays either horizontally or vertically:
+#	Horizontal stack:
+arr1 = np.full((2, 3), 1)
+arr2 = np.full((2, 2), 2)
+print(np.hstack((arr1, arr2)))
 
+#	Vertical stack:
+arr1 = np.full((3, 3), 1)
+arr2 = np.full((3, 3), 2)
+print(np.vstack((arr1, arr2)))
+________________________________________
 
-## Splitting arrays
+```
+5. Splitting Arrays
+```
+#Divide arrays into parts using hsplit (horizontal) or vsplit (vertical):
+#	Horizontal split:
 array = np.arange(1, 11)
-array
-# split into two equal parts
-# warning it needs to allow for an equal division!
-np.hsplit(array, 2)
-
-# this allows for "unpacking"
 first, second = np.hsplit(array, 2)
-print(first)
-print(second)
+print(first)   # [1 2 3 4 5]
+print(second)  # [6 7 8 9 10] #Note: Ensure the array can be split evenly.
+________________________________________
+
+```
+6. Advanced Operations
+```
+
+##Mathematical Operations
+#NumPy supports element-wise arithmetic:
+arr = np.array([1, 2, 3])
+print(arr + 5)  # Add 5 to each element
+
+#Broadcasting
+#Broadcasting lets arrays of different shapes work together during arithmetic operations. For example:
+array = np.array([1, 2, 3])
+matrix = np.array([[1, 2, 3], [4, 5, 6]])
+print(matrix + array)
+
+##Linear Algebra
+#NumPy includes functions for matrix multiplication and other linear algebra operations:
+a = np.array([[1, 2], [3, 4]])
+b = np.array([[2, 0], [1, 2]])
+print(np.dot(a, b))  # Matrix multiplication
+________________________________________
+
