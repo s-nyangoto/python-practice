@@ -31,3 +31,36 @@ stacked = np.vstack([arr1, arr2])
 
 # Slice
 sliced = arr[0:2]
+
+'''
+# Introduction to NumPy arrays
+NumPy (Numerical Python) is an essential library for working with dimensional arrays (matrices and vectors). Because NumPy has optimizations it is usually much faster than working with Python when processing data.
+
+With an activated virtual environment, install the library:
+```
+```
+$ pip install numpy
+```
+import numpy as np
+Arrays are homogenous, that is, its items must be of the same type (unlike a Python list)
+## Create arrays with lists
+# single dimension arrays
+
+array = np.array([1,2,3,4,5])
+array
+# two dimensions
+
+array = np.array([[1,2],[2,2]])
+print(array.shape)
+array
+## Create arrays with built-in functions
+# 2x2 array with random floats of 0 to 1
+np.random.rand(2,2)
+# fill out the 3x4 array with the number 7
+np.full((3,4), 8)
+# using the number 1 is so common that `ones` is a function!
+np.ones((4,4))
+# a simple sequence from 0 to 4
+np.arange(0,5)
+# a sequence with three steps from 0 to 27
+np.arange(0, 27, 3)
