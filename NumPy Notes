@@ -1,6 +1,10 @@
 '''
-=====Key Terms=====
+==Introduction to NumPy arrays==
+NumPy (Numerical Python) is an essential library for working with dimensional arrays (matrices and vectors). 
 
+Because NumPy has optimizations it is usually much faster than working with Python when processing data.
+
+=====Key Terms=====
 Array: Primary data structure in NumPy, represented as homogeneous n-dimensional grid of values.
 
 Reshape: Transform an array into a new shape with same number of elements.
@@ -32,9 +36,6 @@ stacked = np.vstack([arr1, arr2])
 # Slice
 sliced = arr[0:2]
 
-'''
-# Introduction to NumPy arrays
-NumPy (Numerical Python) is an essential library for working with dimensional arrays (matrices and vectors). Because NumPy has optimizations it is usually much faster than working with Python when processing data.
 
 With an activated virtual environment, install the library:
 ```
