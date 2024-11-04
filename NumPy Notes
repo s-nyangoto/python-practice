@@ -64,3 +64,57 @@ np.ones((4,4))
 np.arange(0,5)
 # a sequence with three steps from 0 to 27
 np.arange(0, 27, 3)
+
+# More array operations
+
+import numpy as np
+## Expanding arrays
+# create a single dimension array
+array = np.ones((4,))
+print(array)
+print(array.shape)
+
+# expand one row
+expanded = array[np.newaxis, :]
+expanded.shape
+## Conditional new arrays
+array = np.array([[3,12,11],[45,22,11],[56,15,22]])
+# represent all matching conditions
+print(array < 20)
+# produce all matching values
+array[array < 20]
+## Slicing
+
+Similar to Python lists, but with more features and capabilities
+a = np.arange(6)
+a
+# give a range
+a[1:4]
+## Stacking
+
+# horizontally
+# must have same number of dimensions!
+first = np.full((2, 12), 2)
+print(first)
+second = np.full((2, 7), 2)
+print(second)
+np.hstack((first, second))
+# stacking vertically
+first = np.full((3,3), 1)
+print(first)
+second = np.full((3,3), 2)
+print(second)
+np.vstack((first, second))
+
+
+## Splitting arrays
+array = np.arange(1, 11)
+array
+# split into two equal parts
+# warning it needs to allow for an equal division!
+np.hsplit(array, 2)
+
+# this allows for "unpacking"
+first, second = np.hsplit(array, 2)
+print(first)
+print(second)
